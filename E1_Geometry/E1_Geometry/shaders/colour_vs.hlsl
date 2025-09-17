@@ -32,7 +32,12 @@ OutputType main(InputType input)
 	output.position = mul(input.position, worldMatrix);
 	output.position = mul(output.position, viewMatrix);
 	output.position = mul(output.position, projectionMatrix);
+    output.position.xy *= 2;
 
+    //output.position = mul(output.position, float4x4(2, 0, 0, 0,
+	//												0, 2, 0, 0,
+	//												0, 0, 1, 0,
+	//												0, 0, 0, 1));
 	output.colour = input.colour;
 	
 
